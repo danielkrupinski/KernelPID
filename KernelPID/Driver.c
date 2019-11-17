@@ -18,8 +18,6 @@ typedef struct _EPROCESS {
     UINT32 ActiveThreads;
 } EPROCESS;
 
-extern NTSTATUS ZwQuerySystemInformation(ULONG InfoClass, PVOID Buffer, ULONG Length, PULONG ReturnLength);
-
 static ULONG findProcessId(const STRING* name)
 {
     CONST PEPROCESS startProcess = PsGetCurrentProcess();
