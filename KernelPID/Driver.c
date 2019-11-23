@@ -25,6 +25,9 @@ static ULONG findProcessId(const STRING* name)
     PEPROCESS currentProcess = startProcess;
 
     do {
+        if (!currentProcess->ActiveThreads)
+            continue;
+
         STRING currentName;
         RtlInitString(&currentName, (PCSZ)currentProcess->ImageFileName);
 
